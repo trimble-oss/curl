@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v142 Release" Condition="$(Configuration.ToLower().IndexOf('debugcrt')) == -1">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)\lib\$(Platform)\v142\libcurl_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v142 DebugCRT" Condition="$(Configuration.ToLower().IndexOf('debugcrt')) &gt; -1">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)\lib\$(Platform)\v142\libcurl_a_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>
