@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>LibCurl-Tekla</id>
+    <version>8.11.1.0</version>
+    <authors>libcurl project</authors>
+    <licenseUrl>https://curl.haxx.se/</licenseUrl>
+    <projectUrl>https://curl.haxx.se/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The native libcurl library, Trimble Technology build (x64, v142, Release/DebugCRT).</description>
+    <title>LibCurl (Tekla build)</title>
+    <tags>LibCurl native</tags>
+  </metadata>
+  <files>
+    <file src="LibCurl-Tekla.props" target="\build\native\" />
+    <file src="LibCurl-Tekla.targets" target="\build\native\" />
+
+    <file src="..\include\**\*.h" target="\build\native\include\" />
+
+    <file src="..\vs2019-x64\libcurl_a.lib" target="\build\native\lib\x64\v142\" />
+    <file src="..\vs2019-x64\Debug\libcurl_a_debug.lib" target="\build\native\lib\x64\v142\" />
+    <file src="..\vs2019-x64\curl.exe" target="\build\native\tools\x64\v142\" />
+  </files>
+</package>
